@@ -1,0 +1,15 @@
+@use '/src/styles/constants/colors';
+
+.appWrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: colors.$WHITE;
+  transition: 0.3s;
+}
+
+:root[timeline-theme='dark'] {
+  .appWrapper {
+    background-color: colors.$DARK_BACKGROUND;
+    transition: 0.3s;
+  }
+}

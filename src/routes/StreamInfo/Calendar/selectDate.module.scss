@@ -1,0 +1,64 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
+
+.titleWrapper {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-bottom: 30px;
+  color: colors.$POINT;
+
+  .datePicker {
+    display: flex;
+    height: 40px;
+    padding: 8px 14px;
+    color: colors.$INPUT_BORDER;
+    background-color: colors.$WHITE;
+    border: 0.5px solid colors.$INPUT_BORDER;
+    border-radius: 10px;
+
+    span {
+      padding: 0 5px;
+      font-size: 15px;
+      color: colors.$POINT;
+    }
+
+    .icon {
+      line-height: 30px;
+    }
+  }
+
+  .streamerId {
+    width: 120px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+}
+
+:root[timeline-theme='dark'] {
+  .titleWrapper {
+    .datePicker {
+      background-color: colors.$DARK_CALENDARBGC;
+      border: 1px solid colors.$DARK_BORDER;
+
+      span {
+        color: colors.$SUB_TITLE;
+      }
+    }
+
+    .streamerId {
+      color: colors.$SUB_BACKGROUND;
+    }
+
+    button {
+      color: colors.$BACKGROUND;
+    }
+  }
+}

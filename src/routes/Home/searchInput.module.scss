@@ -1,0 +1,84 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
+
+.formWrapper {
+  height: 300px;
+  margin-top: 100px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+  }
+
+  .searchInputWrapper {
+    position: relative;
+
+    .searchInput {
+      width: 300px;
+      height: 55px;
+      padding: 0 50px 0 20px;
+      font-size: 20px;
+      line-height: 55px;
+      color: colors.$POINT;
+      border: 1px solid colors.$POINT;
+      border-radius: 30px;
+      caret-color: colors.$PLACEHOLDER;
+
+      &::placeholder {
+        color: colors.$PLACEHOLDER;
+      }
+
+      @include responsive.after(MD) {
+        width: 400px;
+      }
+    }
+
+    .searchButton {
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      color: colors.$POINT;
+    }
+  }
+
+  .formText {
+    align-self: flex-start;
+    padding-left: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35px;
+    color: colors.$POINT;
+  }
+
+  .invalidValue {
+    margin: 5px 10px;
+    color: colors.$POINT;
+  }
+}
+
+:root[timeline-theme='dark'] {
+  .searchInput {
+    color: colors.$BACKGROUND;
+    border: 1px solid colors.$SUB_TITLE;
+
+    &::placeholder {
+      color: colors.$GRAY6;
+    }
+  }
+
+  .formText {
+    color: colors.$SUB_BACKGROUND;
+  }
+
+  .searchButton {
+    color: colors.$INPUT_BORDER;
+  }
+
+  .invalidValue {
+    font-weight: 300;
+    color: colors.$SUB_BACKGROUND;
+  }
+}

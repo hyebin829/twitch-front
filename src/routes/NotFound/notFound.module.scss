@@ -1,0 +1,8 @@
+@use '/src/styles/constants/colors';
+
+:root[timeline-theme='dark'] {
+  .notFound {
+    font-weight: 300;
+    color: colors.$WHITE;
+  }
+}

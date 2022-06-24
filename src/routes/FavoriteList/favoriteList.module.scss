@@ -1,0 +1,67 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
+
+.favoriteListWrapper {
+  width: 100vw;
+  padding: 0 40px;
+  color: colors.$POINT;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .nothing {
+    margin-top: 30px;
+    font-size: 18px;
+  }
+
+  .favoriteWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    font-size: 20px;
+    color: colors.$POINT;
+
+    .favorite {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      a {
+        color: colors.$POINT;
+      }
+
+      button {
+        color: colors.$POINT;
+      }
+    }
+  }
+
+  @include responsive.after(MD) {
+    padding: 0 120px;
+  }
+}
+
+:root[timeline-theme='dark'] {
+  .favoriteListWrapper {
+    color: colors.$BACKGROUND;
+
+    .nothing {
+      font-weight: 300;
+      color: colors.$BACKGROUND;
+    }
+
+    .favorite {
+      a {
+        font-weight: 300;
+        color: colors.$BACKGROUND;
+      }
+
+      button {
+        color: colors.$BACKGROUND;
+      }
+    }
+  }
+}
