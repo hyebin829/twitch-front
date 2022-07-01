@@ -40,7 +40,7 @@ const Timeline = () => {
       )}
       {data &&
         data.map((item: IStreamInfo) => (
-          <li className={styles.timelineList} key={`${item.title}-${item.category}`}>
+          <li className={styles.timelineList} key={`${item.title}-${item.category}-${item.createdAt}`}>
             <ul className={styles.streamInfo}>
               <li className={styles.category}>{item.category}</li>
               <li className={styles.title}>{item.title}</li>
